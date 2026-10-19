@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page introuvable — JB Provence Photography</title>
   <meta name="robots" content="noindex">
-  <link rel="icon" href="/assets/images/favicon-32.png" sizes="32x32" type="image/png">
+  <script>
+    // Sur jazycode.github.io/Jb-provence-Photography/, le site n'est pas à la racine du domaine :
+    // on fait pointer les liens vers le bon dossier. Avec un nom de domaine personnalisé, rien ne change.
+    (function () {
+      var base = "/";
+      if (location.hostname.endsWith(".github.io")) {
+        var first = location.pathname.split("/")[1];
+        if (first) base = "/" + first + "/";
+      }
+      document.write('<base href="' + base + '">');
+    })();
+  </script>
+  <link rel="icon" href="assets/images/favicon-32.png" sizes="32x32" type="image/png">
   <style>
     body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; background: #eee3d4; color: #171611; font-family: Arial, Helvetica, sans-serif; text-align: center; }
     img { width: 180px; height: auto; }
@@ -18,10 +30,10 @@
 </head>
 <body>
   <main>
-    <img src="/assets/images/logo.png" alt="JB Provence Photography">
+    <img src="assets/images/logo.png" alt="JB Provence Photography">
     <h1>Cette page <em>s’est égarée.</em></h1>
     <p>Le lien suivi n’existe pas ou a été déplacé.</p>
-    <a href="/">Retour à l’accueil</a>
+    <a href="./">Retour à l’accueil</a>
   </main>
 </body>
 </html>

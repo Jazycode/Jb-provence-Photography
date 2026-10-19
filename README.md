@@ -76,7 +76,7 @@ Le compteur « Découvrir la série · X photos » se met à jour tout seul.
 
 ### Nom de domaine personnalisé (ex. `jbprovencephotography.fr`)
 
-Dans **Settings → Pages → Custom domain**, saisissez votre domaine, puis suivez les instructions DNS de GitHub. La page `404.html` utilise des liens absolus (`/`) et fonctionne pleinement avec un domaine personnalisé.
+Dans **Settings → Pages → Custom domain**, saisissez votre domaine, puis suivez les instructions DNS de GitHub. La page `404.html` s’adapte automatiquement à l’adresse GitHub Pages comme à un domaine personnalisé.
 
 ## À faire avant l'ouverture au public
 
