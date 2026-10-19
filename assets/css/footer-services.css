@@ -1,0 +1,3 @@
+/* Liens vers les pages prestations dans le pied de page */
+.footer-services { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; margin-top: 10px; }
+.footer-services a { color: #4f4941; font-size: 11px; text-underline-offset: 3px; }
