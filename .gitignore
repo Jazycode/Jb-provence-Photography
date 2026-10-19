@@ -1,0 +1,23 @@
+# Systèmes d'exploitation
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+
+# Fichiers sources volumineux à ne pas publier
+*.cr2
+*.CR2
+*.nef
+*.arw
+*.dng
+*.psd
+*.tif
+*.tiff
+
+# Secrets éventuels
+.env
+.env.*
