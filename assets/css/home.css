@@ -400,6 +400,16 @@
   .fitness-block { margin-top: 56px; }
 }
 
+/* ---------- Zones d'intervention ---------- */
+
+.zones { background: var(--paper); }
+.zones-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(24px, 4vw, 60px); border-top: 1px solid var(--line); }
+.zone-group { padding-top: 26px; }
+.zone-group h3 { margin: 0 0 14px; color: var(--gold-text); font: 700 11px var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+.zone-group ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.zone-group li { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; color: #4f4941; font-size: 13px; }
+@media (max-width: 900px) { .zones-grid { grid-template-columns: 1fr; } }
+
 /* ---------- Formules fitness ---------- */
 
 
