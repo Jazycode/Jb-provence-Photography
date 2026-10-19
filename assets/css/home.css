@@ -363,24 +363,43 @@
 
 /* ---------- Prestations ---------- */
 
-.services { background: var(--paper); }
-.services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
-.service-card { display: flex; flex-direction: column; padding: 30px 26px; border: 1px solid var(--line); border-top: 3px solid var(--gold); background: #fff; }
-.service-number { color: var(--gold-text); font: 15px var(--serif); }
-.service-card h3 { margin: 14px 0 12px; font: 400 clamp(23px, 2vw, 28px)/1.15 var(--serif); }
-.service-card > p:not(.service-price) { margin: 0 0 22px; color: var(--muted); font-size: 14px; line-height: 1.7; }
-.service-price { margin: auto 0 14px; color: var(--ink); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-.service-card .text-link { font-size: 13px; }
-@media (max-width: 1100px) { .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } .service-card { padding: 24px 22px; } }
+.services { background: #e7ddd0; }
+.services-list { margin: 0; padding: 0; list-style: none; border-bottom: 1px solid #cdbfa8; }
+.service-row {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) minmax(0, 1.25fr) 120px 190px;
+  align-items: center;
+  gap: 28px;
+  padding: 30px 0;
+  border-top: 1px solid #cdbfa8;
+}
+.service-number { color: var(--gold-text); font: 17px var(--serif); }
+.service-row h3 { margin: 0; font: 400 clamp(24px, 2.2vw, 32px)/1.15 var(--serif); letter-spacing: -.01em; }
+.service-row > p:not(.service-price) { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.service-price { margin: 0; color: var(--ink); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.service-row .text-link { justify-self: end; font-size: 12px; white-space: nowrap; }
+
+.fitness-block { margin-top: 80px; }
+.fitness-block .fitness-heading { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 10px 40px; margin-bottom: 28px; }
+.fitness-block .fitness-heading h3 { margin: 0; font: 400 clamp(26px, 2.6vw, 36px)/1.15 var(--serif); }
+.fitness-block .fitness-heading h3 span { display: block; margin-top: 8px; color: var(--gold-text); font: 700 10px var(--sans); letter-spacing: .18em; text-transform: uppercase; }
+.fitness-block .fitness-heading p { max-width: 380px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+@media (max-width: 1000px) {
+  .service-row { grid-template-columns: 44px 1fr auto; grid-template-areas: "num title price" "num text text" "num link link"; gap: 10px 20px; }
+  .service-number { grid-area: num; align-self: start; padding-top: 6px; }
+  .service-row h3 { grid-area: title; }
+  .service-row > p:not(.service-price) { grid-area: text; }
+  .service-price { grid-area: price; }
+  .service-row .text-link { grid-area: link; justify-self: start; margin-top: 6px; }
+}
+@media (max-width: 560px) {
+  .service-row { grid-template-columns: 34px 1fr; grid-template-areas: "num title" "num text" "num price" "num link"; padding: 24px 0; }
+  .fitness-block { margin-top: 56px; }
+}
 
 /* ---------- Formules fitness ---------- */
 
-.fitness { background: var(--cream); }
-.fitness .eyebrow { color: #6f5426; }
-.fitness-heading { max-width: 760px; margin-bottom: 38px; }
-.fitness-heading h2 { font-size: clamp(36px, 4.5vw, 62px); line-height: 1.1; }
-.fitness-heading > p:last-child { max-width: 640px; margin-top: 24px; color: var(--muted); line-height: 1.7; }
 
 .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .plan {
