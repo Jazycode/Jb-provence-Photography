@@ -79,8 +79,8 @@
       <div class="request-intro">
         <p class="eyebrow">Votre projet</p>
         <h2 id="request-title" class="display">Racontez-moi.</h2>
-        <p>Quelques informations suffisent pour commencer. En envoyant le formulaire, votre application e-mail s’ouvre avec un message déjà préparé : il ne vous reste qu’à l’envoyer.</p>
-        <p class="request-note">Je vous répondrai personnellement dès que possible.</p>
+        <p>Quelques informations suffisent pour commencer. Votre demande m’arrive directement et je vous réponds personnellement.</p>
+        <p class="request-note">Vous préférez parler directement&nbsp;? <a href="tel:+33760833229">07&nbsp;60&nbsp;83&nbsp;32&nbsp;29</a> ou <a href="https://wa.me/33760833229" target="_blank" rel="noopener">WhatsApp</a>.</p>
       </div>
       <form id="contact-form" class="contact-form" novalidate>
         <p class="form-required">Les champs marqués d’un <abbr title="obligatoire">*</abbr> sont obligatoires.</p>
@@ -120,7 +120,8 @@
           </label>
         </div>
         <label>Votre message<textarea name="message" rows="5" placeholder="Vos envies, le nombre de personnes, l’ambiance recherchée…"></textarea></label>
-        <button type="submit">Préparer mon e-mail <span aria-hidden="true">↗</span></button>
+        <input class="form-trap" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit">Envoyer ma demande <span aria-hidden="true">↗</span></button>
         <p class="form-status" role="status" aria-live="polite"></p>
         <p class="privacy-note">Vos informations servent uniquement à répondre à votre demande. <a href="mentions-legales.html#donnees-personnelles">En savoir plus sur leur utilisation</a>.</p>
       </form>

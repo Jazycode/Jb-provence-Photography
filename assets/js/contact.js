@@ -1,11 +1,15 @@
 /* ==========================================================================
-   Page « Me contacter » : formulaire qui prépare un e-mail.
-   Le site étant statique (sans serveur), le formulaire ouvre l'application
-   e-mail du visiteur avec un message pré-rempli.
+   Page « Me contacter » : formulaire de demande.
+   Le site étant statique (sans serveur), la demande est transmise par le
+   service gratuit FormSubmit (formsubmit.co) directement dans la boîte Gmail.
+   Si l'envoi échoue (service indisponible, pas encore activé…), le formulaire
+   ouvre l'application e-mail du visiteur avec le message déjà rédigé : aucune
+   demande n'est perdue.
    ========================================================================== */
 
 (() => {
   const EMAIL = "jbprovencephotography@gmail.com";
+  const ENDPOINT = `https://formsubmit.co/ajax/${EMAIL}`;
   const form = document.querySelector("#contact-form");
   if (!form) return;
   const status = form.querySelector(".form-status");
@@ -31,7 +35,7 @@
     if (event.target.hasAttribute("aria-invalid")) event.target.setAttribute("aria-invalid", String(!event.target.checkValidity()));
   });
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     markFields();
     const firstInvalid = form.querySelector(":invalid");
@@ -59,7 +63,44 @@
       values.message || "Non précisé",
     ].join("\n");
 
-    status.innerHTML = `Votre application e-mail va s’ouvrir. Si rien ne se passe, écrivez-moi directement à <a href="mailto:${EMAIL}">${EMAIL}</a>.`;
-    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    // Champ piège invisible : rempli uniquement par les robots
+    if (values._honey) return;
+
+    const button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
+    status.textContent = "Envoi de votre demande…";
+
+    try {
+      const response = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: subject,
+          _template: "table",
+          _replyto: values.email,
+          Nom: values.nom,
+          Prénom: values.prenom,
+          "E-mail": values.email,
+          Téléphone: values.telephone || "Non précisé",
+          "Type de projet": values.projet,
+          "Lieu envisagé": values.lieu || "Non précisé",
+          "Date souhaitée": values.date ? new Date(values.date).toLocaleDateString("fr-FR") : "Non précisée",
+          "Connu via": values.source || "Non précisé",
+          Message: values.message || "Non précisé",
+        }),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || String(result.success) !== "true") throw new Error(result.message || "Envoi impossible");
+
+      form.reset();
+      form.querySelectorAll("[aria-invalid]").forEach((field) => field.removeAttribute("aria-invalid"));
+      status.textContent = "Merci ! Votre demande est bien envoyée. Je vous réponds personnellement très vite.";
+    } catch {
+      // Solution de secours : message pré-rempli dans l'application e-mail
+      status.innerHTML = `Votre application e-mail va s’ouvrir avec votre demande déjà rédigée. Si rien ne se passe, écrivez-moi à <a href="mailto:${EMAIL}">${EMAIL}</a> ou au 07 60 83 32 29.`;
+      window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    } finally {
+      button.disabled = false;
+    }
   });
 })();
