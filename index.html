@@ -12,7 +12,13 @@
   <meta property="og:site_name" content="JB Provence Photography">
   <meta property="og:title" content="JB Provence Photography — Photographe en Provence">
   <meta property="og:description" content="Des photographies naturelles et sensibles pour raconter les liens, l’énergie et les lieux qui comptent.">
-  <meta property="og:image" content="assets/images/hero-lavande.jpg">
+  <meta property="og:url" content="https://jazycode.github.io/Jb-provence-Photography/">
+  <meta property="og:image" content="https://jazycode.github.io/Jb-provence-Photography/assets/images/apercu-partage.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo JB Provence Photography et champ de lavande">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://jazycode.github.io/Jb-provence-Photography/">
 
   <link rel="icon" href="assets/images/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
@@ -31,6 +37,9 @@
     "email": "jbprovencephotography@gmail.com",
     "areaServed": "Provence",
     "address": { "@type": "PostalAddress", "addressLocality": "Venelles", "postalCode": "13770", "addressRegion": "Provence-Alpes-Côte d’Azur", "addressCountry": "FR" },
+    "url": "https://jazycode.github.io/Jb-provence-Photography/",
+    "image": "https://jazycode.github.io/Jb-provence-Photography/assets/images/apercu-partage.jpg",
+    "priceRange": "À partir de 120 €",
     "sameAs": ["https://www.instagram.com/jb_provence_photography/"]
   }
   </script>
@@ -48,7 +57,7 @@
       <div class="services-menu">
         <button class="services-trigger" type="button" aria-expanded="false" aria-controls="services-dropdown">Prestations <span class="services-chevron" aria-hidden="true"></span></button>
         <div id="services-dropdown" class="services-dropdown">
-          <a href="#fitness">Shooting fitness <span>Formules et tarifs</span></a>
+          <a href="#fitness">Shooting fitness <span>À partir de 120 €</span></a>
           <p class="service-soon">Mariage <span>Bientôt disponible</span></p>
           <p class="service-soon">Sport <span>Bientôt disponible</span></p>
         </div>
@@ -250,6 +259,50 @@
       </article>
     </section>
 
+    <!-- Avis clients : la section reste cachée tant que la liste dans assets/js/avis.js est vide -->
+    <section id="avis" class="section reviews" aria-labelledby="reviews-title" hidden>
+      <div class="reviews-heading">
+        <p class="eyebrow">Ils m’ont fait confiance</p>
+        <h2 id="reviews-title" class="display">Avis clients.</h2>
+      </div>
+      <div class="reviews-list" id="reviews-list"></div>
+    </section>
+
+    <!-- Questions fréquentes -->
+    <section id="faq" class="section faq" aria-labelledby="faq-title">
+      <div class="faq-heading">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2 id="faq-title" class="display">Avant de réserver.</h2>
+        <p>Vous ne trouvez pas votre réponse&nbsp;? <a href="contact.html">Écrivez-moi</a>, je réponds personnellement.</p>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Où se déroulent les séances&nbsp;?</summary>
+          <p>Je suis basé à Venelles, à côté d’Aix-en-Provence, et je me déplace dans toute la Provence : en extérieur, chez vous ou directement sur le lieu de votre choix, comme votre salle de sport pour un shooting fitness. Des frais de déplacement peuvent s’appliquer selon la distance&nbsp;; ils sont indiqués dans le devis avant toute réservation.</p>
+        </details>
+        <details>
+          <summary>Combien coûte une séance&nbsp;?</summary>
+          <p>Les shootings fitness commencent à 120&nbsp;€ pour une heure de prise de vue, avec 12 à 18 photos retouchées. Les formules détaillées sont dans la <a href="#fitness">section fitness</a>. Pour les autres projets, je vous envoie un devis adapté après notre premier échange.</p>
+        </details>
+        <details>
+          <summary>Quand vais-je recevoir mes photos&nbsp;?</summary>
+          <p>Pour un shooting fitness, les photos retouchées sont livrées sous 7 à 10 jours, en JPEG haute définition, par un lien de téléchargement privé.</p>
+        </details>
+        <details>
+          <summary>Est-ce que je reçois toutes les photos prises&nbsp;?</summary>
+          <p>Je sélectionne les meilleures images puis je les retouche une par une, en couleur et en noir et blanc selon le rendu. Les fichiers bruts (RAW) ne sont pas livrés&nbsp;: ce sont des fichiers de travail non retouchés. Des tirages papier sont possibles en option.</p>
+        </details>
+        <details>
+          <summary>Je ne suis pas à l’aise devant l’objectif. C’est un problème&nbsp;?</summary>
+          <p>Pas du tout, c’est le cas de la plupart des gens. Je vous guide simplement pendant toute la séance et je laisse la place aux moments naturels&nbsp;: ce sont souvent les images les plus réussies.</p>
+        </details>
+        <details>
+          <summary>Comment réserver&nbsp;?</summary>
+          <p>Remplissez le <a href="contact.html#demande">formulaire de contact</a>, appelez-moi au <a href="tel:+33760833229">07&nbsp;60&nbsp;83&nbsp;32&nbsp;29</a> ou écrivez-moi sur <a href="https://wa.me/33760833229" target="_blank" rel="noopener">WhatsApp</a>. Nous fixons ensemble la date, le lieu et la formule, puis je vous confirme la réservation.</p>
+        </details>
+      </div>
+    </section>
+
     <section class="cta" aria-labelledby="cta-title">
       <p class="eyebrow">Votre histoire</p>
       <h2 id="cta-title" class="display">Créons des images<br>qui vous ressemblent.</h2>
@@ -257,6 +310,13 @@
       <a class="button" href="contact.html">Commencer un projet</a>
     </section>
   </main>
+
+  <!-- Barre de contact fixe, visible sur téléphone après le haut de page -->
+  <nav class="mobile-cta" aria-label="Contact rapide">
+    <a href="tel:+33760833229">Appeler</a>
+    <a href="https://wa.me/33760833229" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="mobile-cta-main" href="contact.html#demande">Réserver</a>
+  </nav>
 
   <footer class="site-footer">
     <a class="footer-brand" href="#accueil" aria-label="JB Provence Photography, retour en haut de page"><img src="assets/images/logo.png" width="300" height="227" loading="lazy" alt="JB Provence Photography"></a>
@@ -281,6 +341,7 @@
 
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/galleries.js" defer></script>
+  <script src="assets/js/avis.js" defer></script>
   <script src="assets/js/home.js" defer></script>
 </body>
 </html>

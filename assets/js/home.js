@@ -66,8 +66,17 @@
     activeTile?.setAttribute("aria-expanded", "true");
     renderGallery(slug);
     gallerySection.hidden = false;
+    // Adresse partageable, ex. …/#galerie-sport
+    history.replaceState(null, "", `#galerie-${slug}`);
     gallerySection.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  // Ouverture directe d'une galerie depuis un lien partagé
+  const openFromHash = () => {
+    const match = location.hash.match(/^#galerie-([a-z]+)$/);
+    if (match && galleries[match[1]]) openGallery(match[1]);
+  };
+  window.addEventListener("hashchange", openFromHash);
 
   document.querySelectorAll("[data-gallery]").forEach((trigger) => {
     trigger.addEventListener("click", () => openGallery(trigger.dataset.gallery));
@@ -75,6 +84,7 @@
 
   document.querySelector("#gallery-close").addEventListener("click", () => {
     gallerySection.hidden = true;
+    history.replaceState(null, "", location.pathname + location.search);
     if (!activeTile) return;
     activeTile.setAttribute("aria-expanded", "false");
     activeTile.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -158,4 +168,35 @@
     });
     showcaseGroup.after(copy);
   }
+
+  // ---------- Avis clients (assets/js/avis.js) ----------
+  const reviews = window.AVIS || [];
+  const reviewsSection = document.querySelector("#avis");
+  if (reviewsSection && reviews.length) {
+    const list = reviewsSection.querySelector("#reviews-list");
+    reviews.forEach((review) => {
+      const figure = document.createElement("figure");
+      figure.className = "review";
+      const quote = document.createElement("blockquote");
+      quote.textContent = review.texte;
+      const caption = document.createElement("figcaption");
+      const name = document.createElement("strong");
+      name.textContent = review.nom;
+      caption.append(name, review.prestation || "");
+      figure.append(quote, caption);
+      list.append(figure);
+    });
+    reviewsSection.hidden = false;
+  }
+
+  // ---------- Barre de contact mobile : apparaît après le haut de page ----------
+  const mobileCta = document.querySelector(".mobile-cta");
+  const hero = document.querySelector(".hero");
+  if (mobileCta && hero && "IntersectionObserver" in window) {
+    new IntersectionObserver(([entry]) => {
+      mobileCta.classList.toggle("is-visible", !entry.isIntersecting);
+    }).observe(hero);
+  }
+
+  openFromHash();
 })();

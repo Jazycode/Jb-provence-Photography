@@ -526,3 +526,100 @@
   .cta { padding: 80px var(--gutter); }
   .cta h2 { font-size: 43px; }
 }
+
+/* ---------- Avis clients ---------- */
+
+.reviews { background: var(--paper); }
+.reviews-heading { margin-bottom: 40px; }
+.reviews-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; }
+.review {
+  margin: 0;
+  padding: 30px 28px;
+  border: 1px solid #ddd0bb;
+  background: #fbf7ef;
+}
+.review blockquote { margin: 0 0 20px; font: 400 20px/1.45 var(--serif); }
+.review blockquote::before { content: "« "; color: var(--gold); }
+.review blockquote::after { content: " »"; color: var(--gold); }
+.review figcaption { color: var(--muted); font-size: 12px; letter-spacing: .06em; }
+.review figcaption strong { display: block; color: var(--ink); font-size: 13px; letter-spacing: .02em; }
+
+/* ---------- Questions fréquentes ---------- */
+
+.faq {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: clamp(40px, 7vw, 110px);
+  background: #f3ece1;
+}
+.faq-heading { align-self: start; position: sticky; top: 130px; }
+.faq-heading h2 { margin-bottom: 22px; }
+.faq-heading p:not(.eyebrow) { max-width: 340px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.faq-heading a,
+.faq-list a { color: var(--gold-text); text-underline-offset: 3px; }
+
+.faq-list { border-top: 1px solid var(--line); }
+.faq-list details { border-bottom: 1px solid var(--line); }
+.faq-list summary {
+  position: relative;
+  padding: 24px 44px 24px 0;
+  font: 400 clamp(19px, 1.9vw, 24px)/1.3 var(--serif);
+  list-style: none;
+  cursor: pointer;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  color: var(--gold-text);
+  font: 300 28px/1 var(--sans);
+  transform: translateY(-50%);
+  transition: transform .2s ease;
+}
+.faq-list details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq-list summary:hover { color: var(--gold-text); }
+.faq-list details p { max-width: 640px; margin: 0 0 26px; color: var(--muted); font-size: 15px; line-height: 1.75; }
+
+@media (max-width: 860px) {
+  .faq { grid-template-columns: 1fr; gap: 30px; }
+  .faq-heading { position: static; }
+}
+
+/* ---------- Barre de contact mobile ---------- */
+
+.mobile-cta { display: none; }
+
+@media (max-width: 760px) {
+  .mobile-cta {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.3fr;
+    gap: 8px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: rgba(252, 250, 245, .96);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -8px 24px rgba(57, 43, 26, .1);
+    transform: translateY(110%);
+    transition: transform .3s ease;
+  }
+  .mobile-cta.is-visible { transform: none; }
+  .mobile-cta a {
+    display: grid;
+    place-items: center;
+    min-height: 46px;
+    border: 1px solid #b7a887;
+    border-radius: 999px;
+    color: var(--ink-soft);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .mobile-cta .mobile-cta-main { background: var(--sand-dark); border-color: var(--sand-dark); color: #fffdf8; }
+  .site-footer { padding-bottom: 110px; }
+}

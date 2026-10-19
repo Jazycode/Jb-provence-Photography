@@ -24,6 +24,7 @@ puis ouvrez <http://localhost:8000>.
 ├── mentions-legales.html   Mentions légales et confidentialité
 ├── 404.html                Page « introuvable »
 ├── robots.txt
+├── sitemap.xml          Plan du site pour Google
 └── assets/
     ├── css/
     │   ├── base.css        Couleurs, en-tête, menu, pied de page (toutes les pages)
@@ -33,6 +34,7 @@ puis ouvrez <http://localhost:8000>.
     ├── js/
     │   ├── main.js         Menu, en-tête, animations (toutes les pages)
     │   ├── galleries.js    ★ Liste des photos de chaque galerie
+│   ├── avis.js         ★ Avis clients (la section s’affiche dès qu’il y en a un)
     │   ├── home.js         Galeries et visionneuse
     │   └── contact.js      Formulaire de contact
     ├── images/
@@ -55,6 +57,14 @@ puis ouvrez <http://localhost:8000>.
    ```
 
 Le compteur « Découvrir la série · X photos » se met à jour tout seul.
+
+## Partager une galerie
+
+Chaque galerie a son propre lien, pratique pour Instagram ou WhatsApp :
+
+- `…/#galerie-animalier`
+- `…/#galerie-sport`
+- `…/#galerie-paysage`
 
 ## Mettre le site en ligne avec GitHub Pages
 
@@ -82,7 +92,8 @@ Dans **Settings → Pages → Custom domain**, saisissez votre domaine, puis sui
 
 - [ ] Renseigner le médiateur de la consommation dans `mentions-legales.html` (section 06), puis supprimer le bloc « Information à compléter ».
 - [ ] Si le site est hébergé ailleurs que sur GitHub Pages, mettre à jour la section « Hébergement ».
-- [ ] Une fois le domaine choisi, ajouter dans `robots.txt` la ligne `Sitemap: https://votre-domaine/sitemap.xml` et créer le sitemap (facultatif).
+- [ ] En cas de nom de domaine personnalisé, remplacer l’adresse `jazycode.github.io/Jb-provence-Photography` dans `sitemap.xml`, `robots.txt` et les balises `canonical` / `og:` des pages.
+- [ ] Ajouter de vrais avis clients dans `assets/js/avis.js` et une photo de Jayson dans la section « À propos ».
 - [ ] Ajouter le lien vers le site de Soleia dans la section « Collaborateurs » lorsqu'il sera en ligne.
 
 ## Droits

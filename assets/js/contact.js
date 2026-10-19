@@ -52,6 +52,8 @@
       `Téléphone : ${values.telephone || "Non précisé"}`,
       `Type de projet : ${values.projet}`,
       `Lieu envisagé : ${values.lieu || "Non précisé"}`,
+      `Date souhaitée : ${values.date ? new Date(values.date).toLocaleDateString("fr-FR") : "Non précisée"}`,
+      `Connu via : ${values.source || "Non précisé"}`,
       "",
       "Message :",
       values.message || "Non précisé",

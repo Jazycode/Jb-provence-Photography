@@ -8,7 +8,10 @@
   <meta name="theme-color" content="#b9a982">
   <meta property="og:title" content="Me contacter — JB Provence Photography">
   <meta property="og:description" content="Parlez-moi de votre projet photo en Provence.">
-  <meta property="og:image" content="assets/images/hero-lavande.jpg">
+  <meta property="og:url" content="https://jazycode.github.io/Jb-provence-Photography/contact.html">
+  <meta property="og:image" content="https://jazycode.github.io/Jb-provence-Photography/assets/images/apercu-partage.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://jazycode.github.io/Jb-provence-Photography/contact.html">
   <link rel="icon" href="assets/images/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/base.css">
@@ -27,7 +30,7 @@
       <div class="services-menu">
         <button class="services-trigger" type="button" aria-expanded="false" aria-controls="services-dropdown">Prestations <span class="services-chevron" aria-hidden="true"></span></button>
         <div id="services-dropdown" class="services-dropdown">
-          <a href="index.html#fitness">Shooting fitness <span>Formules et tarifs</span></a>
+          <a href="index.html#fitness">Shooting fitness <span>À partir de 120 €</span></a>
           <p class="service-soon">Mariage <span>Bientôt disponible</span></p>
           <p class="service-soon">Sport <span>Bientôt disponible</span></p>
         </div>
@@ -104,7 +107,19 @@
           </label>
           <label>Lieu envisagé<input name="lieu" autocomplete="address-level2" placeholder="Ville ou adresse"></label>
         </div>
-        <label>Votre message<textarea name="message" rows="5" placeholder="Date souhaitée, vos envies, nombre de personnes…"></textarea></label>
+        <div class="form-row">
+          <label>Date souhaitée<input name="date" type="date"></label>
+          <label>Comment m’avez-vous connu&nbsp;?
+            <select name="source">
+              <option value="" selected>Choisir</option>
+              <option>Instagram</option>
+              <option>Bouche-à-oreille</option>
+              <option>Recherche Google</option>
+              <option>Autre</option>
+            </select>
+          </label>
+        </div>
+        <label>Votre message<textarea name="message" rows="5" placeholder="Vos envies, le nombre de personnes, l’ambiance recherchée…"></textarea></label>
         <button type="submit">Préparer mon e-mail <span aria-hidden="true">↗</span></button>
         <p class="form-status" role="status" aria-live="polite"></p>
         <p class="privacy-note">Vos informations servent uniquement à répondre à votre demande. <a href="mentions-legales.html#donnees-personnelles">En savoir plus sur leur utilisation</a>.</p>
