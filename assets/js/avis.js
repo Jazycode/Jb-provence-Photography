@@ -10,7 +10,7 @@
      { texte: "Séance au top, je recommande !", nom: "Léa M.", prestation: "Shooting fitness", etoiles: 5 },
    ========================================================================== */
 
-window.NOTE_GOOGLE = { note: 5, nombre: 3 };
+window.NOTE_GOOGLE = { note: 5, nombre: 4 };
 
 window.AVIS = [
 ];
