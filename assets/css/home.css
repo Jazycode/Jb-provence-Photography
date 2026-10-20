@@ -411,6 +411,16 @@
 .zone-group li { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; color: #4f4941; font-size: 13px; }
 @media (max-width: 900px) { .zones-grid { grid-template-columns: 1fr; } }
 
+/* ---------- Bons cadeaux ---------- */
+
+.gift { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: clamp(40px, 7vw, 110px); background: var(--cream); }
+.gift-copy p:not(.eyebrow) { max-width: 520px; margin: 26px 0 32px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.gift-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid #cdbfa8; }
+.gift-list li { display: flex; justify-content: space-between; gap: 20px; padding: 20px 0; border-bottom: 1px solid #cdbfa8; }
+.gift-list span { font: 400 clamp(20px, 1.8vw, 25px) var(--serif); }
+.gift-list strong { align-self: center; color: var(--gold-text); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+@media (max-width: 900px) { .gift { grid-template-columns: 1fr; } }
+
 /* ---------- Formules fitness ---------- */
 
 
@@ -457,15 +467,15 @@
   gap: 9vw;
   background: #eee4d5;
 }
-.about-logo { display: grid; place-content: center; min-height: 380px; }
-.about-logo img { display: block; width: min(100%, 430px); height: auto; }
+.about-photo { margin: 0; justify-self: center; width: min(100%, 440px); background: #e2d5c2; }
+.about-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
 .about-copy { max-width: 660px; }
 .about-copy h2 { margin-bottom: 28px; }
 .about-copy p:not(.eyebrow) { color: #514b43; font-size: 16px; line-height: 1.8; }
 
 @media (max-width: 760px) {
   .about { grid-template-columns: 1fr; gap: 45px; }
-  .about-logo { min-height: 0; }
+  .about-photo { width: min(100%, 380px); }
 }
 
 /* ---------- Collaborateurs ---------- */
