@@ -115,8 +115,16 @@
     button.disabled = true;
     status.textContent = "Envoi de votre demande…";
 
+    // L'envoi peut être lent (jusqu'à ~40 s) : on rassure le visiteur et on coupe après 60 s
+    const slowNotice = setTimeout(() => {
+      status.textContent = "Envoi en cours… cela peut prendre jusqu’à 30 secondes, merci de ne pas fermer la page.";
+    }, 4000);
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 60000);
+
     try {
       const response = await fetch(ENDPOINT, {
+        signal: controller.signal,
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
@@ -145,6 +153,8 @@
       status.innerHTML = `Votre application e-mail va s’ouvrir avec votre demande déjà rédigée. Si rien ne se passe, écrivez-moi à <a href="mailto:${EMAIL}">${EMAIL}</a> ou au 07 60 83 32 29.`;
       window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     } finally {
+      clearTimeout(slowNotice);
+      clearTimeout(timeout);
       button.disabled = false;
     }
   });
