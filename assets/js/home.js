@@ -170,23 +170,45 @@
   }
 
   // ---------- Avis clients (assets/js/avis.js) ----------
-  const reviews = window.AVIS || [];
+  // ---------- Avis Google : note + bandeau défilant ----------
   const reviewsSection = document.querySelector("#avis");
-  if (reviewsSection && reviews.length) {
-    const list = reviewsSection.querySelector("#reviews-list");
-    reviews.forEach((review) => {
-      const figure = document.createElement("figure");
-      figure.className = "review";
-      const quote = document.createElement("blockquote");
-      quote.textContent = review.texte;
-      const caption = document.createElement("figcaption");
-      const name = document.createElement("strong");
-      name.textContent = review.nom;
-      caption.append(name, review.prestation || "");
-      figure.append(quote, caption);
-      list.append(figure);
-    });
-    reviewsSection.hidden = false;
+  if (reviewsSection) {
+    const score = window.NOTE_GOOGLE;
+    if (score) {
+      reviewsSection.querySelector("[data-google-note]").textContent = Number(score.note).toFixed(1).replace(".", ",");
+      reviewsSection.querySelector("[data-google-count]").textContent = `${score.nombre} avis`;
+    }
+    const reviews = window.AVIS || [];
+    if (reviews.length) {
+      const group = reviewsSection.querySelector("#reviews-list");
+      reviews.forEach((review) => {
+        const figure = document.createElement("figure");
+        figure.className = "review";
+        const stars = document.createElement("p");
+        stars.className = "stars";
+        const n = Math.max(1, Math.min(5, review.etoiles || 5));
+        stars.textContent = "★".repeat(n) + "☆".repeat(5 - n);
+        stars.setAttribute("aria-label", `${n} étoiles sur 5`);
+        const quote = document.createElement("blockquote");
+        quote.textContent = review.texte;
+        const caption = document.createElement("figcaption");
+        const name = document.createElement("strong");
+        name.textContent = review.nom;
+        caption.append(name, [review.prestation, "Avis Google"].filter(Boolean).join(" · "));
+        figure.append(stars, quote, caption);
+        group.append(figure);
+      });
+      // Duplique la liste pour un défilement continu (si assez d'avis)
+      const marquee = reviewsSection.querySelector(".reviews-marquee");
+      if (reviews.length >= 3) {
+        const copy = group.cloneNode(true);
+        copy.removeAttribute("id");
+        copy.setAttribute("aria-hidden", "true");
+        group.after(copy);
+        marquee.classList.add("is-moving");
+      }
+      marquee.hidden = false;
+    }
   }
 
   // ---------- Barre de contact mobile : apparaît après le haut de page ----------

@@ -361,13 +361,25 @@
       </div>
     </section>
 
-    <!-- Avis clients : la section reste cachée tant que la liste dans assets/js/avis.js est vide -->
-    <section id="avis" class="section reviews" aria-labelledby="reviews-title" hidden>
+    <!-- Avis Google : note + bandeau défilant (contenu dans assets/js/avis.js) -->
+    <section id="avis" class="section reviews" aria-labelledby="reviews-title">
       <div class="reviews-heading">
-        <p class="eyebrow">Ils m’ont fait confiance</p>
-        <h2 id="reviews-title" class="display">Avis clients.</h2>
+        <div>
+          <p class="eyebrow">Ils m’ont fait confiance</p>
+          <h2 id="reviews-title" class="display">Avis clients.</h2>
+        </div>
+        <div class="google-score">
+          <p class="google-score-note"><strong data-google-note>5,0</strong><span class="stars" aria-hidden="true">★★★★★</span></p>
+          <p class="google-score-count"><span data-google-count>3 avis</span> sur Google</p>
+          <div class="google-score-links">
+            <a class="text-link" href="https://www.google.com/maps?cid=9644019520319455197" target="_blank" rel="noopener">Voir les avis <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="https://g.page/r/Cd3_klOocNaFEBM/review" target="_blank" rel="noopener">Laisser un avis <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
       </div>
-      <div class="reviews-list" id="reviews-list"></div>
+      <div class="reviews-marquee" hidden>
+        <div class="reviews-track"><div class="reviews-group" id="reviews-list"></div></div>
+      </div>
     </section>
 
     <!-- Questions fréquentes -->

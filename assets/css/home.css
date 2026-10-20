@@ -558,20 +558,40 @@
 
 /* ---------- Avis clients ---------- */
 
-.reviews { background: var(--paper); }
-.reviews-heading { margin-bottom: 40px; }
-.reviews-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; }
-.review {
-  margin: 0;
-  padding: 30px 28px;
-  border: 1px solid #ddd0bb;
-  background: #fbf7ef;
-}
-.review blockquote { margin: 0 0 20px; font: 400 20px/1.45 var(--serif); }
+.reviews { background: var(--paper); overflow-x: clip; }
+.reviews-heading { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 30px 60px; margin-bottom: 44px; }
+.google-score { min-width: 260px; }
+.google-score-note { display: flex; align-items: center; gap: 14px; margin: 0; }
+.google-score-note strong { font: 400 56px/1 var(--serif); }
+.stars { color: #e3a325; letter-spacing: .08em; }
+.google-score-note .stars { font-size: 24px; }
+.google-score-count { margin: 8px 0 16px; color: var(--muted); font-size: 13px; }
+.google-score-links { display: flex; flex-wrap: wrap; gap: 8px 26px; }
+.google-score-links .text-link { font-size: 11px; }
+
+.reviews-marquee { position: relative; margin-inline: calc(var(--gutter) * -1); }
+.reviews-marquee::before,
+.reviews-marquee::after { content: ""; position: absolute; top: 0; bottom: 0; z-index: 2; width: min(8vw, 110px); pointer-events: none; }
+.reviews-marquee::before { left: 0; background: linear-gradient(90deg, var(--paper), transparent); }
+.reviews-marquee::after { right: 0; background: linear-gradient(270deg, var(--paper), transparent); }
+.reviews-track { display: flex; gap: 20px; width: max-content; padding-inline: var(--gutter); }
+.reviews-marquee.is-moving .reviews-track { padding-inline: 0; animation: reviews-flow 45s linear infinite; }
+.reviews-marquee:hover .reviews-track { animation-play-state: paused; }
+.reviews-group { display: flex; gap: 20px; }
+@keyframes reviews-flow { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 10px)); } }
+.review { flex: none; width: 340px; margin: 0; padding: 28px 26px; border: 1px solid var(--line); background: #fff; }
+.review .stars { margin: 0 0 14px; font-size: 15px; }
+.review blockquote { margin: 0 0 20px; font: 400 19px/1.45 var(--serif); }
 .review blockquote::before { content: "« "; color: var(--gold); }
 .review blockquote::after { content: " »"; color: var(--gold); }
 .review figcaption { color: var(--muted); font-size: 12px; letter-spacing: .06em; }
-.review figcaption strong { display: block; color: var(--ink); font-size: 13px; letter-spacing: .02em; }
+.review figcaption strong { display: block; margin-bottom: 3px; color: var(--ink); font-size: 13px; letter-spacing: .02em; }
+@media (max-width: 760px) { .review { width: 270px; } .google-score-note strong { font-size: 46px; } }
+@media (prefers-reduced-motion: reduce) {
+  .reviews-marquee.is-moving .reviews-track { animation: none; }
+  .reviews-marquee { overflow-x: auto; }
+  .reviews-group[aria-hidden="true"] { display: none; }
+}
 
 /* ---------- Questions fréquentes ---------- */
 

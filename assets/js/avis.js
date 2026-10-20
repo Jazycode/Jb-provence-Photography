@@ -1,12 +1,16 @@
 /* ==========================================================================
-   AVIS CLIENTS
+   AVIS GOOGLE
    --------------------------------------------------------------------------
-   La section « Avis clients » de l'accueil s'affiche automatiquement dès
-   qu'il y a au moins un avis dans la liste ci-dessous.
+   NOTE_GOOGLE : la note et le nombre d'avis affichés sur la fiche Google.
+   Mettez-les à jour quand de nouveaux avis arrivent.
 
-   N'ajoutez que de vrais avis, avec l'accord du client. Par exemple :
-     { texte: "Séance au top, je recommande !", nom: "Léa M.", prestation: "Shooting fitness" },
+   AVIS : le texte des avis Google, recopiés tels quels (sans les modifier),
+   avec le prénom et l'initiale du client. Le bandeau défilant s'affiche dès
+   qu'il y a au moins un avis. Exemple :
+     { texte: "Séance au top, je recommande !", nom: "Léa M.", prestation: "Shooting fitness", etoiles: 5 },
    ========================================================================== */
+
+window.NOTE_GOOGLE = { note: 5, nombre: 3 };
 
 window.AVIS = [
 ];
