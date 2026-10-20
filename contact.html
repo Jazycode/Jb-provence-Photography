@@ -84,6 +84,16 @@
         <p class="eyebrow">Votre projet</p>
         <h2 id="request-title" class="display">Racontez-moi.</h2>
         <p>Quelques informations suffisent pour commencer. Votre demande m’arrive directement et je vous réponds personnellement.</p>
+        <div class="availability">
+          <p class="availability-title">Mes disponibilités</p>
+          <ul>
+            <li><span>Mercredi</span><strong class="is-open">Disponible</strong></li>
+            <li><span>Dimanche</span><strong class="is-open">Disponible</strong></li>
+            <li><span>Samedi</span><strong>Sur demande</strong></li>
+            <li><span>Week-end complet</span><strong>Sur demande</strong></li>
+          </ul>
+          <button class="text-link availability-toggle" type="button" aria-expanded="false" aria-controls="agenda">Voir les créneaux déjà pris <span aria-hidden="true">↓</span></button>
+        </div>
         <p class="request-note">Vous préférez parler directement&nbsp;? <a href="tel:+33760833229">07&nbsp;60&nbsp;83&nbsp;32&nbsp;29</a> ou <a href="https://wa.me/33760833229" target="_blank" rel="noopener">WhatsApp</a>.</p>
       </div>
       <form id="contact-form" class="contact-form" novalidate>
@@ -114,7 +124,7 @@
           <label>Lieu envisagé<input name="lieu" autocomplete="address-level2" placeholder="Ville ou adresse"></label>
         </div>
         <div class="form-row">
-          <label>Date souhaitée<input name="date" type="date"></label>
+          <label>Date souhaitée<input name="date" type="date" aria-describedby="date-hint"><small id="date-hint" class="date-hint">Mercredi ou dimanche · samedi sur demande</small></label>
           <label>Comment m’avez-vous connu&nbsp;?
             <select name="source">
               <option value="" selected>Choisir</option>
@@ -131,6 +141,10 @@
         <p class="form-status" role="status" aria-live="polite"></p>
         <p class="privacy-note">Vos informations servent uniquement à répondre à votre demande. <a href="mentions-legales.html#donnees-personnelles">En savoir plus sur leur utilisation</a>.</p>
       </form>
+      <div id="agenda" class="agenda" hidden>
+        <p class="agenda-note">Les créneaux marqués « Occupé » sont déjà réservés. Les autres mercredis et dimanches sont libres.</p>
+        <div class="agenda-frame"></div>
+      </div>
     </section>
   </main>
 
