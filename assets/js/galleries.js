@@ -17,7 +17,22 @@ window.GALLERIES = {
     folder: "assets/images/galeries/animalier/",
     photos: [
       { src: "border-collie.jpg", alt: "Border collie noir et blanc dans l’herbe", caption: "Animalier · Portrait canin" },
+      { src: "chien-sourire.jpg", alt: "Chien roux et blanc souriant, assis près d’une chaise en bois", caption: "Animalier · Le sourire" },
+      { src: "border-collie-saut.jpg", alt: "Border collie bleu merle en plein saut dans un jardin", caption: "Animalier · L’envol" },
+      { src: "golden-retriever.jpg", alt: "Golden retriever crème assis dans un champ en Provence", caption: "Animalier · Portrait canin" },
+      { src: "border-collie-course.jpg", alt: "Border collie qui court dans l’herbe, cadré à travers les feuilles", caption: "Animalier · En mouvement" },
       { src: "chat-tricolore.jpg", alt: "Chat tricolore à poil long assis en extérieur", caption: "Animalier · Portrait félin" },
+      { src: "tortue-eau.jpg", alt: "Tête de tortue émergeant de l’eau au centre d’un reflet circulaire", caption: "Animalier · Regard sous l’eau" },
+    ],
+  },
+
+  moments: {
+    title: "Moments de vie",
+    subtitle: "Fêtes, journées entre amis et instants partagés.",
+    folder: "assets/images/galeries/moments/",
+    photos: [
+      { src: "petanque-pointeur.jpg", alt: "Partie de pétanque entre amis dans un jardin provençal", caption: "Moments de vie · Le pointeur" },
+      { src: "petanque-tireur.jpg", alt: "Joueur de pétanque accroupi lançant sa boule devant un mas provençal", caption: "Moments de vie · Le tir" },
     ],
   },
 

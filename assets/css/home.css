@@ -133,7 +133,8 @@
 }
 .section-intro { max-width: 380px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
 
-.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+@media (max-width: 1100px) and (min-width: 761px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
 
 .tile {
   position: relative;
@@ -180,7 +181,8 @@
   top: 18px;
   left: 18px;
   max-width: calc(100% - 70px);
-  font: 400 31px/1 var(--serif);
+  font: 400 clamp(22px, 2vw, 30px)/1.05 var(--serif);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, .35);
 }
 .tile-subtitle { font-size: 11px; }
 .tile-status {
@@ -198,6 +200,7 @@
 
 .tile--animalier { background-image: url("../images/univers/animalier.jpg"); }
 .tile--sport { background-image: url("../images/univers/sport.jpg"); background-position: 76% center; }
+.tile--moments { background-image: url("../images/univers/moments.jpg"); }
 .tile--paysage { background-image: url("../images/univers/paysage.jpg"); }
 
 @media (max-width: 760px) {
