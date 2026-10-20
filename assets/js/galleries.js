@@ -17,10 +17,13 @@ window.GALLERIES = {
     folder: "assets/images/galeries/animalier/",
     photos: [
       { src: "border-collie.jpg", alt: "Border collie noir et blanc dans l’herbe", caption: "Animalier · Portrait canin" },
+      { src: "border-collie-yeux.jpg", alt: "Gros plan d’un border collie aux yeux vairons, langue tirée", caption: "Animalier · Le regard" },
+      { src: "corgi-sourire.jpg", alt: "Chiot corgi souriant dans les bras de sa maîtresse", caption: "Animalier · La complicité" },
       { src: "chien-sourire.jpg", alt: "Chien roux et blanc souriant, assis près d’une chaise en bois", caption: "Animalier · Le sourire" },
       { src: "border-collie-saut.jpg", alt: "Border collie bleu merle en plein saut dans un jardin", caption: "Animalier · L’envol" },
       { src: "golden-retriever.jpg", alt: "Golden retriever crème assis dans un champ en Provence", caption: "Animalier · Portrait canin" },
       { src: "border-collie-course.jpg", alt: "Border collie qui court dans l’herbe, cadré à travers les feuilles", caption: "Animalier · En mouvement" },
+      { src: "corgi-calin.jpg", alt: "Chiot corgi serré dans les bras, langue tirée au soleil", caption: "Animalier · Le câlin" },
       { src: "chat-tricolore.jpg", alt: "Chat tricolore à poil long assis en extérieur", caption: "Animalier · Portrait félin" },
       { src: "tortue-eau.jpg", alt: "Tête de tortue émergeant de l’eau au centre d’un reflet circulaire", caption: "Animalier · Regard sous l’eau" },
     ],
@@ -33,6 +36,11 @@ window.GALLERIES = {
     photos: [
       { src: "petanque-pointeur.jpg", alt: "Partie de pétanque entre amis dans un jardin provençal", caption: "Moments de vie · Le pointeur" },
       { src: "petanque-tireur.jpg", alt: "Joueur de pétanque accroupi lançant sa boule devant un mas provençal", caption: "Moments de vie · Le tir" },
+      { src: "petanque-groupe.jpg", alt: "Amis réunis autour du terrain de pétanque sous un grand pin", caption: "Moments de vie · La bande" },
+      { src: "petanque-mesure.jpg", alt: "Deux amis accroupis étudiant la position des boules", caption: "Moments de vie · La concentration" },
+      { src: "petanque-lancer.jpg", alt: "Joueur en chemise de lin lançant sa boule entre les cyprès", caption: "Moments de vie · Le geste" },
+      { src: "petanque-cypres.jpg", alt: "Partie de pétanque entre amis, cadrée sous les branches d’un platane", caption: "Moments de vie · Sous le platane" },
+      { src: "petanque-boules.jpg", alt: "Boules et cochonnet sur le gravier, au ras du sol", caption: "Moments de vie · Le détail" },
     ],
   },
 
