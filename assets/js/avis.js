@@ -13,4 +13,5 @@
 window.NOTE_GOOGLE = { note: 5, nombre: 4 };
 
 window.AVIS = [
+  { texte: "Vous avez intervenu pour des photos de mon chien, les photos étaient vraiment sublime, un vrai passionné de photos mais aussi très doux avec les animaux, merci à vous !", nom: "Gabriel M.", prestation: "Séance animalière", etoiles: 5 },
 ];
