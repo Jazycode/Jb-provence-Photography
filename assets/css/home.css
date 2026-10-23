@@ -205,10 +205,10 @@
 }
 .tile-status.is-soon { background: rgba(30, 26, 21, .72); }
 
-.tile--animalier { background-image: url("../images/univers/animalier.jpg"); }
-.tile--sport { background-image: url("../images/univers/sport.jpg?v=2"); background-position: 70% center; }
-.tile--moments { background-image: url("../images/univers/moments.jpg"); }
-.tile--paysage { background-image: url("../images/univers/paysage.jpg?v=2"); }
+.tile--animalier { background-image: url("../images/univers/animalier.jpg?v=3"); }
+.tile--sport { background-image: url("../images/univers/sport.jpg?v=3"); background-position: 70% center; }
+.tile--moments { background-image: url("../images/univers/moments.jpg?v=3"); }
+.tile--paysage { background-image: url("../images/univers/paysage.jpg?v=3"); }
 
 @media (max-width: 760px) {
   .section-heading { display: block; }
