@@ -21,3 +21,4 @@ desktop.ini
 # Secrets éventuels
 .env
 .env.*
+__pycache__/
