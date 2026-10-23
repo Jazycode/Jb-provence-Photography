@@ -205,7 +205,7 @@
 }
 .tile-status.is-soon { background: rgba(30, 26, 21, .72); }
 
-.tile--animalier { background-image: url("../images/univers/animalier.jpg?v=3"); }
+.tile--animalier { background-image: url("../images/univers/animalier.jpg?v=4"); background-position: center 30%; }
 .tile--sport { background-image: url("../images/univers/sport.jpg?v=3"); background-position: 70% center; }
 .tile--moments { background-image: url("../images/univers/moments.jpg?v=3"); }
 .tile--paysage { background-image: url("../images/univers/paysage.jpg?v=3"); }
