@@ -1,13 +1,14 @@
 /* ==========================================================================
-   CONTENU DES GALERIES
+   CONTENU DES GALERIES — fichier mis à jour automatiquement
    --------------------------------------------------------------------------
-   Pour ajouter une photo :
-     1. Déposez le fichier dans assets/images/galeries/<nom-de-la-galerie>/
-        (JPEG de 2000 px de large maximum, idéalement moins de 500 Ko).
-     2. Ajoutez une ligne dans la liste « photos » de la galerie ci-dessous :
-        { src: "nom-du-fichier.jpg", alt: "Description de la photo", caption: "Légende" },
+   Pour ajouter une photo : déposez-la simplement dans
+   assets/images/galeries/<nom-de-la-galerie>/ (sur github.com : Add file >
+   Upload files). La liste ci-dessous, les miniatures et le compteur des tuiles
+   se mettent à jour tout seuls en 1 à 2 minutes.
 
-   Le nombre de photos affiché sur chaque tuile se met à jour tout seul.
+   Pour retirer une photo : supprimez son fichier.
+   Vous pouvez modifier ici le titre, le sous-titre, l'ordre des photos ou
+   leurs descriptions (alt) et légendes (caption) : vos changements sont gardés.
    ========================================================================== */
 
 window.GALLERIES = {

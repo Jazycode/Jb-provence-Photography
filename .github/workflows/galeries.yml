@@ -1,0 +1,37 @@
+name: Galeries photo (mise à jour automatique)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/images/galeries/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: commit-auto
+  cancel-in-progress: false
+
+jobs:
+  galeries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Installer Pillow
+        run: pip install pillow pillow-heif
+      - name: Traiter les photos et mettre à jour les galeries
+        run: python tools/maj_galeries.py
+      - name: Publier les changements
+        run: |
+          git add -A assets/images/galeries assets/images/miniatures assets/js/galleries.js index.html
+          if git diff --cached --quiet; then echo "Rien à publier"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Galeries : mise à jour automatique des photos"
+          git pull --rebase -q origin main
+          git push
