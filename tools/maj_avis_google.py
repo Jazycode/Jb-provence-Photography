@@ -36,7 +36,9 @@ def find_place_id():
 
 
 # Noms Google écrits « Nom Prénom » : on indique ici l'affichage voulu
-NOMS = {"Merard Gabriel": "Gabriel M."}
+NOMS = {"Merard Gabriel": "Gabriel M.", "Sean DENIAU BOUVET": "Sean D.", "Laury Bnrd": "Laury B."}
+# Avis à ne jamais afficher sur le site (ex. avis laissé depuis un compte de l'entreprise)
+EXCLUS = {"byReaaZn", "byReaaZn (byReaaZn)"}
 
 
 def short_name(full):
@@ -74,7 +76,8 @@ def main():
     google = []
     for r in data.get("reviews", []):
         text = (r.get("originalText") or r.get("text") or {}).get("text", "").strip()
-        if not text:
+        auteur = r.get("authorAttribution", {}).get("displayName", "").strip()
+        if not text or auteur in EXCLUS:
             continue
         google.append({"texte": text, "nom": short_name(r.get("authorAttribution", {}).get("displayName", "")),
                        "prestation": "", "etoiles": int(r.get("rating", 5))})
