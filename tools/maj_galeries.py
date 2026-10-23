@@ -29,6 +29,7 @@ GAL_JS = os.path.join(ROOT, "assets", "js", "galleries.js")
 INDEX = os.path.join(ROOT, "index.html")
 EXTS = {".jpg", ".jpeg", ".png", ".webp", ".heic", ".heif", ".tif", ".tiff"}
 MAX_SIDE, MINI_H, QUALITY = 1800, 840, 84
+GENERIC = re.compile(r"^(img|dsc|dscn|dji|pxl|photo|image|p|_?mg|dcim|screenshot|capture)?[ _-]*[ _-]?[0-9a-f _-]*$", re.I)
 
 HEADER = """/* ==========================================================================
    CONTENU DES GALERIES — fichier mis à jour automatiquement
@@ -165,7 +166,12 @@ def main():
             "title": label(key), "subtitle": "", "folder": f"assets/images/galeries/{key}/", "photos": []}
         known = {p["src"]: p for p in g["photos"]}
         kept = [p for p in g["photos"] if p["src"] in final]
-        added = [{"src": f, "alt": names[f], "caption": f"{g['title']} · {names[f]}"}
+        def describe(f):
+            # Photos envoyées depuis l'iPhone (IMG_1234, DSC…) : description générique
+            if GENERIC.match(names[f]):
+                return f"{g['title']} · Photographie de Jayson Bernardet, JB Provence Photography"
+            return names[f]
+        added = [{"src": f, "alt": describe(f), "caption": f"{g['title']} · {describe(f) if not GENERIC.match(names[f]) else 'JB Provence Photography'}"}
                  for f in final if f not in known]
         g["photos"] = added + kept
         galleries[key] = g
