@@ -650,7 +650,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1.3fr;
     gap: 8px;
-    padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+    padding: 10px max(12px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
     background: rgba(252, 250, 245, .96);
     border-top: 1px solid var(--line);
     box-shadow: 0 -8px 24px rgba(57, 43, 26, .1);
@@ -670,5 +670,5 @@
     text-decoration: none;
   }
   .mobile-cta .mobile-cta-main { background: var(--sand-dark); border-color: var(--sand-dark); color: #fffdf8; }
-  .site-footer { padding-bottom: 110px; }
+  .site-footer { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
 }
