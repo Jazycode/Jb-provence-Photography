@@ -12,7 +12,7 @@ import json, os, re, sys, urllib.error, urllib.request, urllib.parse
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AVIS_JS = os.path.join(ROOT, "assets", "js", "avis.js")
 KEY = os.environ.get("GOOGLE_PLACES_API_KEY", "").strip()
-PLACE_ID = os.environ.get("GOOGLE_PLACE_ID", "").strip()
+PLACE_ID = os.environ.get("GOOGLE_PLACE_ID", "").strip() or "ChIJs6bPczgQbEgR3f-SU6hw1oU"  # fiche JB Provence Photography
 QUERY = "Jb Provence photography Venelles"
 
 
