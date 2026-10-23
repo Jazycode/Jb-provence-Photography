@@ -190,7 +190,8 @@
         stars.textContent = "★".repeat(n) + "☆".repeat(5 - n);
         stars.setAttribute("aria-label", `${n} étoiles sur 5`);
         const quote = document.createElement("blockquote");
-        quote.textContent = review.texte;
+        // Retours à la ligne de l'avis Google → phrases sur une seule ligne
+        quote.textContent = review.texte.trim().replace(/([^.!?…\s])\s*\n+\s*/g, "$1. ").replace(/\s*\n+\s*/g, " ");
         const caption = document.createElement("figcaption");
         const name = document.createElement("strong");
         name.textContent = review.nom;
