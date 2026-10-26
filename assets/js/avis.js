@@ -5,7 +5,7 @@
    Format : { texte: "…", nom: "Prénom N.", prestation: "…", etoiles: 5 },
    ========================================================================== */
 
-window.NOTE_GOOGLE = { note: 5, nombre: 6 };
+window.NOTE_GOOGLE = { note: 5, nombre: 5 };
 
 window.AVIS = [
   { texte: "Merci à Jayson pour son professionnalisme et son accompagnement. Des photos pour un projet sportif perso, le contenu m’a permis de communiquer sur mes réseaux sociaux.\n\nCréatif et à l’écoute\n\nJe recommande sans hésitation.\nMerci encore", nom: "Sean D.", prestation: "Shooting sportif", etoiles: 5 },
