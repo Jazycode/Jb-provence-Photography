@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jazycode.github.io/Jb-provence-Photography/sitemap.xml
+Sitemap: https://jbprovencephotography.com/sitemap.xml

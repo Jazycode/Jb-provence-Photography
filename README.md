@@ -92,7 +92,7 @@ Dans **Settings → Pages → Custom domain**, saisissez votre domaine, puis sui
 
 - [ ] Renseigner le médiateur de la consommation dans `mentions-legales.html` (section 06), puis supprimer le bloc « Information à compléter ».
 - [ ] Si le site est hébergé ailleurs que sur GitHub Pages, mettre à jour la section « Hébergement ».
-- [ ] En cas de nom de domaine personnalisé, remplacer l’adresse `jazycode.github.io/Jb-provence-Photography` dans `sitemap.xml`, `robots.txt` et les balises `canonical` / `og:` des pages.
+- [x] Nom de domaine officiel : https://jbprovencephotography.com (hébergement Cloudflare Pages, déploiement automatique à chaque modification sur `main`). L’ancienne adresse GitHub Pages redirige vers le domaine.
 - [ ] Ajouter de vrais avis clients dans `assets/js/avis.js` et une photo de Jayson dans la section « À propos ».
 - [ ] Ajouter le lien vers le site de Soleia dans la section « Collaborateurs » lorsqu'il sera en ligne.
 
