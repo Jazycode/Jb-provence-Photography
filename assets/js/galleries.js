@@ -50,6 +50,7 @@ window.GALLERIES = {
     subtitle: "Force, mouvement, dépassement.",
     folder: "assets/images/galeries/sport/",
     photos: [
+      { src: "sportif-aux-halteres-en-salle-de-musculation.jpg", alt: "Sportif en débardeur noir tenant deux haltères en salle de musculation", caption: "Sport · La concentration" },
       { src: "coach-seance-1.jpg", alt: "Sportif en plein effort sur une machine de musculation", caption: "Sport · L’effort" },
       { src: "coach-seance-2.jpg", alt: "Portrait du sportif pendant sa séance de fitness", caption: "Sport · Le regard" },
       { src: "coach-seance-3.jpg", alt: "Effort intense pendant un exercice de musculation", caption: "Sport · L’intensité" },
