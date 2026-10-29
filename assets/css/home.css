@@ -392,6 +392,27 @@
 .service-price { margin: 0; color: var(--ink); font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .service-row .text-link { justify-self: end; font-size: 12px; white-space: nowrap; }
 
+/* ---------- Mini-séance découverte ---------- */
+.discovery { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 32px 56px; align-items: start; margin-top: 56px; padding: 40px 44px; border: 2px solid #806535; background: var(--paper); }
+.discovery-label { margin: 0 0 12px; color: var(--gold-text); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.discovery h3 { margin: 0 0 14px; font: 400 clamp(28px, 3vw, 40px)/1.1 var(--serif); letter-spacing: -.01em; }
+.discovery-intro > p:not([class]) { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.discovery-bonus { margin-top: 24px; padding: 18px 20px; border-left: 3px solid var(--gold); background: #f4ecdf; }
+.discovery-bonus p { margin: 0; font-size: 14px; line-height: 1.6; color: var(--ink); }
+.discovery-bonus .discovery-bonus-title { margin-bottom: 6px; color: var(--gold-text); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.discovery-price { margin: 0 0 16px; font-size: 56px; line-height: 1; }
+.discovery-price > span:last-child { font-size: 30px; }
+.discovery-old { margin-right: 10px; color: var(--muted); font-size: 24px; text-decoration: line-through; vertical-align: middle; }
+.discovery ul { margin: 0 0 16px; padding: 0; list-style: none; font-size: 15px; line-height: 1.7; }
+.discovery li::before { content: "✓"; margin-right: 10px; color: var(--gold-text); font-weight: 700; }
+.discovery-extra { margin: 0 0 22px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.discovery-extra strong { color: var(--ink); }
+.discovery .button { font-size: 11px; letter-spacing: .05em; }
+@media (max-width: 760px) {
+  .discovery { grid-template-columns: 1fr; margin-top: 40px; padding: 28px 22px; }
+  .discovery-price { font-size: 48px; }
+}
+
 .fitness-block { margin-top: 80px; }
 .fitness-block .fitness-heading { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 10px 40px; margin-bottom: 28px; }
 .fitness-block .fitness-heading h3 { margin: 0; font: 400 clamp(26px, 2.6vw, 36px)/1.15 var(--serif); }

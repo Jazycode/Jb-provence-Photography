@@ -20,6 +20,9 @@
   if (project && [...form.elements.projet.options].some((option) => option.value === project || option.text === project)) {
     form.elements.projet.value = project;
   }
+  if (project === "Mini-séance découverte") {
+    form.elements.message.value = "Bonjour, je souhaite réserver une mini-séance découverte (30 min, 59 € au tarif de lancement).\nSujet (portrait, animal, sport…) : \nLieu souhaité : \nDate souhaitée : ";
+  }
   const formula = params.get("formule");
   if (project === "Fitness" && ["Essentiel", "Confort", "Premium"].includes(formula)) {
     form.elements.message.value = `Bonjour, je souhaite réserver un shooting fitness, formule ${formula}.\nDate souhaitée : `;
