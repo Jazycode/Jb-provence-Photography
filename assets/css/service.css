@@ -75,3 +75,15 @@
 .page-mini { margin: 12px 0 0; }
 .page-mini a { display: inline-block; padding: 8px 14px; border: 1px solid #b7a887; border-radius: 999px; color: var(--ink); font-size: 12px; font-weight: 700; text-decoration: none; }
 .page-mini a:hover, .page-mini a:focus-visible { background: var(--ink); border-color: var(--ink); color: #fffdf8; }
+
+/* Effet flash d'appareil photo sur le bouton mini-séance (toutes les ~3,5 s) */
+.page-mini a { position: relative; overflow: hidden; isolation: isolate; }
+.page-mini a::after {
+  content: ""; position: absolute; inset: -40%; z-index: -1; pointer-events: none;
+  background: radial-gradient(circle at 70% 40%, rgba(255,255,255,1) 0%, rgba(255,247,220,.9) 25%, rgba(255,255,255,0) 60%);
+  opacity: 0; animation: camera-flash 3.6s ease-out infinite;
+}
+.page-mini a { box-shadow: 0 0 0 rgba(255, 236, 180, 0); animation: camera-flash-glow 3.6s ease-out infinite; }
+@keyframes camera-flash { 0%, 86% { opacity: 0; } 88% { opacity: 1; } 91% { opacity: .15; } 93% { opacity: .8; } 100% { opacity: 0; } }
+@keyframes camera-flash-glow { 0%, 86%, 100% { box-shadow: 0 0 0 rgba(255,236,180,0); } 88%, 93% { box-shadow: 0 0 22px 6px rgba(255,236,180,.85); } }
+@media (prefers-reduced-motion: reduce) { .page-mini a, .page-mini a::after { animation: none; } }

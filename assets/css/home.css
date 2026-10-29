@@ -693,3 +693,15 @@
   .mobile-cta .mobile-cta-main { background: var(--sand-dark); border-color: var(--sand-dark); color: #fffdf8; }
   .site-footer { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
 }
+
+/* Effet flash d'appareil photo sur la mini-séance (toutes les ~3,5 s) */
+.discovery { position: relative; overflow: hidden; }
+.discovery::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(circle at 78% 22%, rgba(255,255,255,.95) 0%, rgba(255,246,215,.55) 30%, rgba(255,255,255,0) 65%);
+  opacity: 0; animation: camera-flash 3.6s ease-out infinite;
+}
+.discovery .button { animation: camera-flash-glow 3.6s ease-out infinite; }
+@keyframes camera-flash { 0%, 86% { opacity: 0; } 88% { opacity: 1; } 91% { opacity: .15; } 93% { opacity: .8; } 100% { opacity: 0; } }
+@keyframes camera-flash-glow { 0%, 86%, 100% { box-shadow: 0 0 0 rgba(255,236,180,0); } 88%, 93% { box-shadow: 0 0 22px 6px rgba(255,236,180,.85); } }
+@media (prefers-reduced-motion: reduce) { .discovery::after, .discovery .button { animation: none; } }
