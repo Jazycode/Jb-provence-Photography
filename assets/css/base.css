@@ -417,3 +417,34 @@ img.is-ready { opacity: 1; transition: opacity .6s ease; }
   *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ---------- Bulle « Mini-séance découverte » (toutes les pages) ---------- */
+.mini-bubble {
+  position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 45;
+  display: flex; align-items: center; gap: 4px; padding: 6px 6px 6px 8px; border-radius: 999px;
+  background: #171611; color: #fffdf8; box-shadow: 0 10px 30px rgba(23, 22, 17, .28);
+  opacity: 0; transform: translateY(20px) scale(.96); transition: opacity .4s ease, transform .4s ease;
+  overflow: hidden; isolation: isolate;
+}
+.mini-bubble.is-shown { opacity: 1; transform: none; }
+.mini-bubble.is-shown.is-hidden { opacity: 0; transform: translateY(20px) scale(.96); pointer-events: none; }
+.mini-bubble::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; border-radius: inherit;
+  background: radial-gradient(circle at 18% 50%, rgba(255,255,255,.9) 0%, rgba(255,240,200,.45) 30%, rgba(255,255,255,0) 70%);
+  opacity: 0; animation: bubble-flash 3.6s ease-out infinite;
+}
+@keyframes bubble-flash { 0%, 86% { opacity: 0; } 88% { opacity: 1; } 91% { opacity: .15; } 93% { opacity: .85; } 100% { opacity: 0; } }
+.mini-bubble-link { display: flex; align-items: center; gap: 10px; padding: 4px 6px 4px 2px; color: inherit; text-decoration: none; }
+.mini-bubble-icon { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #b38a45; color: #171611; flex: none; }
+.mini-bubble-text { display: grid; line-height: 1.2; }
+.mini-bubble-text strong { font-size: 13px; letter-spacing: .01em; }
+.mini-bubble-text span { margin-top: 2px; color: #e3cfa5; font-size: 11px; }
+.mini-bubble-close { width: 28px; height: 28px; border: 0; border-radius: 50%; background: rgba(255,255,255,.1); color: #fffdf8; font-size: 18px; line-height: 1; cursor: pointer; }
+.mini-bubble-close:hover, .mini-bubble-close:focus-visible { background: rgba(255,255,255,.22); }
+.mini-bubble-link:focus-visible { outline: 2px solid #e3cfa5; outline-offset: 2px; border-radius: 999px; }
+@media (max-width: 760px) {
+  .mini-bubble { right: 12px; left: auto; }
+  .mini-bubble.has-cta { bottom: calc(86px + env(safe-area-inset-bottom, 0px)); }
+}
+@media (prefers-reduced-motion: reduce) { .mini-bubble { transition: none; } .mini-bubble::after { animation: none; } }
+@media print { .mini-bubble { display: none; } }
