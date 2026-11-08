@@ -67,6 +67,12 @@ window.GALLERIES = {
     subtitle: "Architecture et horizons.",
     folder: "assets/images/galeries/paysage/",
     photos: [
+      { src: "clocher-a-coupole-et-horloge-sur-ciel-bleu.jpg", alt: "Clocher à coupole de cuivre et horloge sur un ciel bleu, Italie", caption: "Italie · Le clocher" },
+      { src: "drapeau-italien-et-grues-sur-ciel-bleu.jpg", alt: "Drapeau italien et grues de chantier au-dessus des toits", caption: "Italie · Entre deux époques" },
+      { src: "edicule-baroque-dore-sur-facade-peinte.jpg", alt: "Édicule baroque doré sur une façade peinte en trompe-l'œil, Italie", caption: "Italie · Baroque doré" },
+      { src: "horloge-ancienne-a-l-angle-d-une-facade-italienne.jpg", alt: "Horloge ancienne à l'angle d'une façade en Italie, photographiée par Jayson Bernardet", caption: "Italie · L'heure suspendue" },
+      { src: "panneau-parking-et-architecture-brutaliste.jpg", alt: "Panneau de parking devant une architecture brutaliste en contre-jour, Italie", caption: "Italie · Lignes urbaines" },
+      { src: "vitrail-baroque-dans-la-penombre-d-une-eglise.jpg", alt: "Vitrail baroque lumineux dans la pénombre d'une église italienne", caption: "Italie · Lumière de vitrail" },
       { src: "monument-rome-1.jpg", alt: "Église historique et sa coupole à Rome", caption: "Monument · Rome" },
       { src: "monument-rome-2.jpg", alt: "Clocher ancien en contre-plongée sous un ciel bleu", caption: "Architecture · Clocher historique" },
       { src: "monument-rome-3.jpg", alt: "Statue religieuse ornant la façade d’un monument historique", caption: "Monument · Détail architectural" },
